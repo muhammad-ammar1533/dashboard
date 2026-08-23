@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Dashboard</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">📅</span>
+                    <span>Calendar</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>Welcome Back! 👋</h1>
+                    <p class="subtitle">Here's your earnings summary</p>
+                </div>
+                <div class="header-right">
+                    <div class="profile-card">
+                        <img src="https://via.placeholder.com/60/1a3a52/ffffff?text=YOU" alt="Profile" class="profile-pic">
+                        <div class="profile-info">
+                            <h3 class="profile-name">Muhammad</h3>
+                            <p class="profile-level">Level <span id="levelNumber">5</span></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Row -->
+            <section class="stats-row">
+                <div class="stat-card total-earnings">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-content">
+                        <p class="stat-label">Total Earnings</p>
+                        <h2 class="stat-value">$<span id="totalEarnings">12,450</span></h2>
+                    </div>
+                </div>
+
+                <div class="stat-card monthly-earnings">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-content">
+                        <p class="stat-label">This Month</p>
+                        <h2 class="stat-value">$<span id="monthEarnings">3,240</span></h2>
+                    </div>
+                </div>
+
+                <div class="stat-card level-progress">
+                    <div class="stat-content">
+                        <p class="stat-label">Level Progress</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="levelProgress"></div>
+                        </div>
+                        <p class="progress-text"><span id="progressPercent">65</span>% to Level 6</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Grid -->
+            <section class="main-grid">
+                <!-- Chart Section -->
+                <div class="chart-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Monthly Earnings</h3>
+                            <span class="chart-period">2024</span>
+                        </div>
+                        <canvas id="earningsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Calendar Section -->
+                <div class="calendar-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Calendar</h3>
+                            <div class="calendar-nav">
+                                <button id="prevMonth">&lt;</button>
+                                <span id="currentMonth"></span>
+                                <button id="nextMonth">&gt;</button>
+                            </div>
+                        </div>
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Levels Section -->
+            <section class="levels-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Achievement Levels</h3>
+                        <span class="level-badge">Pro Member</span>
+                    </div>
+                    <div class="levels-grid">
+                        <div class="level-item level-1 locked">
+                            <div class="level-num">1</div>
+                            <p>Starter</p>
+                        </div>
+                        <div class="level-item level-2 locked">
+                            <div class="level-num">2</div>
+                            <p>Beginner</p>
+                        </div>
+                        <div class="level-item level-3 locked">
+                            <div class="level-num">3</div>
+                            <p>Amateur</p>
+                        </div>
+                        <div class="level-item level-4 locked">
+                            <div class="level-num">4</div>
+                            <p>Professional</p>
+                        </div>
+                        <div class="level-item level-5 active">
+                            <div class="level-num">5</div>
+                            <p>Expert</p>
+                        </div>
+                        <div class="level-item level-6">
+                            <div class="level-num">6</div>
+                            <p>Master</p>
+                        </div>
+                        <div class="level-item level-7">
+                            <div class="level-num">7</div>
+                            <p>Legend</p>
+                        </div>
+                        <div class="level-item level-8">
+                            <div class="level-num">8</div>
+                            <p>God Tier</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
